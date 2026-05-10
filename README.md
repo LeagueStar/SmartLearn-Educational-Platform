@@ -18,7 +18,8 @@
 
 <br>
 <hr>
-## 📌 Project Description
+---
+### 📌 Project Description
 **SmartLearn** is a modern, responsive frontend web application designed to simulate an AI-powered educational platform. Built as a comprehensive frontend architecture project, this website bridges the gap between traditional learning and next-gen AI assistance. It features a fully responsive UI, dynamic course rendering using JavaScript Object-Oriented Programming (OOP), robust form validation using Regular Expressions (Regex), and smooth, interactive animations.
 
 ### 🎯 Purpose
@@ -26,14 +27,15 @@ The primary objective of this project is to demonstrate advanced frontend develo
 
 ---
 
-## 🚀 Core Features
-* **Dynamic Course Rendering:** Course catalogs are generated entirely through JavaScript ES6 Classes (`Course`) and dynamically injected into the DOM.
-* **Robust Authentication Forms:** Login and Sign-Up forms equipped with real-time Regex validation for email formats and dynamic, multi-factor password strength calculation.
-* **Interactive UI/UX:** Features animated toast notifications, modal popups, and slide-up feature detail panels triggered by user interaction.
-* **Performance-Optimized Animations:** Utilizes the `IntersectionObserver` API to efficiently fade and slide elements into view as the user scrolls, avoiding layout thrashing.
-* **Fully Responsive:** Engineered with CSS Grid and Flexbox to ensure a seamless, fluid experience across desktop, tablet, and mobile breakpoints.
-* **Custom CSS Illustrations:** Features a pure-CSS animated robot scene in the hero section to establish a strong, brand-consistent AI theme.
+## ✨ Core Capabilities
 
+| 🤖 Dynamic Rendering | 🛡️ Secure Auth | ⚡ Interactive UI |
+| :--- | :--- | :--- |
+| Course catalogs generated via JS ES6 Classes and injected directly into the DOM. | Real-time Regex validation for emails and multi-factor password strength calculation. | Slide-up detail panels, animated toast notifications, and modal popups. |
+
+| 📱 Responsive Grid | 🎯 Scroll Animations | 🎨 Custom CSS Art |
+| :--- | :--- | :--- |
+| Fluid layouts engineered with CSS Grid and Flexbox for all device breakpoints. | Utilizes `IntersectionObserver` to efficiently fade and slide elements without layout thrashing. | Features a pure-CSS animated robot scene to establish the AI brand theme. |
 ---
 
 ## 💻 Technologies & Concepts Used
