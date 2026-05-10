@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartLearn — AI-Powered Learning</title>
+
+    <!--
+      FONTS:
+      Poppins  — used for all headings and the brand name. Its geometric shapes
+                 mirror the logo's clean, modern construction.
+      Inter    — used for body text. It is optimised for on-screen readability
+                 at small sizes, reducing eye strain over long reading sessions.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for scalable vector icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="SmartLearn.css" />
+  </head>
+
+  <body>
+
+    <!-- ══════════════════════════════════════════════════════
+         SITE HEADER / NAVIGATION
+         ─────────────────────────────────────────────────────
+         • Fixed at the top of the viewport.
+         • JS adds the class "is-scrolled" once scrollY > 50px,
+           which increases the header's bottom border visibility.
+         • Uses semantic <header> and <nav> for screen readers.
+         • The mobile hamburger has no inline onclick — wired in trail.js.
+    ══════════════════════════════════════════════════════ -->
+    <header id="site-header" role="banner">
+
+      <!--
+        LOGO INTEGRATION:
+        The provided SmartLearn logo image (PNG) is used here as an <img> tag.
+        It replaces the old emoji + text placeholder from the previous version.
+
+        Sizing is controlled entirely by trail.css (.logo-image class),
+        keeping the HTML clean. The alt text describes the logo for
+        screen readers and in case the image fails to load.
+
+        The logo is wrapped in an <a> tag so clicking it scrolls back to #home.
+      -->
+      <a href="#home" class="logo" aria-label="SmartLearn — go to homepage">
+        <img
+          src="assets/Logo.png"
+          alt="SmartLearn Educational Platform logo"
+          class="logo-image"
+        />
+      </a>
+
+      <!-- Desktop navigation links -->
+      <nav id="main-nav" aria-label="Main Navigation">
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#login">Login</a>
+        <a href="#feedback">Feedback</a>
+      </nav>
+
+      <!-- Mobile hamburger button — no inline onclick, wired in trail.js -->
+      <button
+        class="mobile-menu-btn"
+        id="mobile-menu-btn"
+        aria-label="Toggle Navigation Menu"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+    </header>
+
+    <main>
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 1: HERO
+           ─────────────────────────────────────────────────────
+           Two-column layout: text left, robot illustration right.
+           The hero background uses the brand's deep navy (--color-nav-bg)
+           to create a strong, confident first impression that is consistent
+           with the header colour — making the top feel like one cohesive unit.
+      ══════════════════════════════════════════════════════ -->
+      <section id="home" aria-labelledby="hero-heading">
+        <div class="section-inner hero-wrap">
+
+          <!-- Left column: headline, CTA buttons, social proof -->
+          <div class="hero-content">
+
+            <!-- Badge: small pill above the headline -->
+            <div class="badge" aria-label="New Feature Badge">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              Now powered by GPT-4 AI tutoring
+            </div>
+
+            <h1 id="hero-heading">
+              Learn Smarter with<br />
+              <span class="text-gradient">AI-Powered</span> Education
+            </h1>
+
+            <p class="hero-subtitle">
+              Upload any content — PDFs, videos, slides — and SmartLearn turns
+              it into interactive notes, quizzes, podcasts, and a 24/7 AI tutor
+              built just for you.
+            </p>
+
+            <div class="hero-buttons">
+              <!--
+                NO INLINE JS:
+                data-scroll-to and data-open-tab store the intended action.
+                trail.js reads these attributes with dataset and responds.
+              -->
+              <button
+                class="btn-primary"
+                id="hero-get-started-btn"
+                data-scroll-to="#login"
+                data-open-tab="signup"
+              >
+                Get Started Free →
+              </button>
+              <button class="btn-secondary" data-scroll-to="#courses">
+                <i class="fas fa-play-circle" aria-hidden="true"></i>
+                Explore Courses
+              </button>
+            </div>
+
+            <!-- Social proof strip: stacked avatars + learner count -->
+            <div class="social-proof">
+              <div class="avatar-stack" aria-hidden="true">
+                <img src="https://randomuser.me/api/portraits/men/11.jpg"    alt="Learner avatar" />
+                <img src="https://randomuser.me/api/portraits/women/22.jpg"  alt="Learner avatar" />
+                <img src="https://randomuser.me/api/portraits/men/33.jpg"    alt="Learner avatar" />
+                <img src="https://randomuser.me/api/portraits/women/44.jpg"  alt="Learner avatar" />
+                <img src="https://randomuser.me/api/portraits/men/55.jpg"    alt="Learner avatar" />
+              </div>
+              <p class="social-proof-text">
+                <strong>2,000,000+</strong> learners already enrolled
+              </p>
+            </div>
+          </div>
+
+          <!-- Right column: pure-CSS robot illustration (aria-hidden — decorative) -->
+          <div class="robot-container" aria-hidden="true">
+            <div class="robot-scene">
+              <div class="ground-line"></div>
+
+              <!-- Walking robot: animates from left to right across the scene -->
+              <div class="walking-robot">
+                <div class="robot-body">
+                  <div class="robot-head"><div class="antenna"></div></div>
+                  <div class="robot-arm arm-left"></div>
+                  <div class="robot-arm arm-right"></div>
+                  <div class="robot-leg leg-left"></div>
+                  <div class="robot-leg leg-right"></div>
+                  <div class="robot-book"></div>
+                </div>
+              </div>
+
+              <!-- Reading robot: stationary, floats gently, has speech bubble -->
+              <div class="reading-robot">
+                <div class="robot-body">
+                  <div class="robot-head"><div class="antenna"></div></div>
+                  <div class="robot-arm arm-left"></div>
+                  <div class="robot-arm arm-right"></div>
+                  <div class="robot-leg leg-left"></div>
+                  <div class="robot-leg leg-right"></div>
+                  <div class="robot-book"></div>
+                </div>
+                <div class="speech-bubble">📚 Studying AI...</div>
+              </div>
+
+              <!-- Mini decorative robot to the right -->
+              <div class="mini-robot">
+                <div class="robot-body">
+                  <div class="robot-head"><div class="antenna"></div></div>
+                  <div class="robot-arm arm-left"></div>
+                  <div class="robot-arm arm-right"></div>
+                  <div class="robot-leg leg-left"></div>
+                  <div class="robot-leg leg-right"></div>
+                  <div class="robot-book"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 2: FEATURES
+           ─────────────────────────────────────────────────────
+           Six clickable feature cards. Each card stores a
+           data-feature-index that JS uses to look up and display
+           detailed information in the slide-up info panel.
+           No inline event handlers — all wired in trail.js.
+      ══════════════════════════════════════════════════════ -->
+      <section id="features" aria-labelledby="features-heading">
+        <div class="section-inner">
+
+          <div class="section-header animate-on-scroll">
+            <span class="section-label">Features</span>
+            <h2 id="features-heading" class="section-title">Save hours, learn smarter</h2>
+            <p class="section-subtitle">Click any card to explore the feature in detail.</p>
+          </div>
+
+          <div class="features-grid">
+
+            <article class="feature-card animate-on-scroll" data-feature-index="0"
+                     tabindex="0" aria-label="AI Tutor Chat feature card">
+              <div class="feature-card-icon feature-icon-navy">
+                <i class="fas fa-comment-dots" aria-hidden="true"></i>
+              </div>
+              <h3>Chat with an AI Tutor</h3>
+              <p>Talk to an AI to simplify ideas and get instant guidance on any content, 24/7.</p>
+              <span class="click-hint" aria-hidden="true">↗ Click to explore</span>
+            </article>
+
+            <article class="feature-card animate-on-scroll" data-feature-index="1"
+                     tabindex="0" aria-label="Content Upload feature card">
+              <div class="feature-card-icon feature-icon-orange">
+                <i class="fas fa-file-pdf" aria-hidden="true"></i>
+              </div>
+              <h3>Upload Any Content</h3>
+              <p>From PDFs and YouTube videos to slides and lectures — learn everything your way.</p>
+              <span class="click-hint" aria-hidden="true">↗ Click to explore</span>
+            </article>
+
+            <article class="feature-card animate-on-scroll" data-feature-index="2"
+                     tabindex="0" aria-label="Knowledge Testing feature card">
+              <div class="feature-card-icon feature-icon-navy">
+                <i class="fas fa-question-circle" aria-hidden="true"></i>
+              </div>
+              <h3>Test Your Knowledge</h3>
+              <p>Create personalized exams, get answer breakdowns, and track your progress.</p>
+              <span class="click-hint" aria-hidden="true">↗ Click to explore</span>
+            </article>
+
+            <article class="feature-card animate-on-scroll" data-feature-index="3"
+                     tabindex="0" aria-label="Summary and Podcasts feature card">
+              <div class="feature-card-icon feature-icon-orange">
+                <i class="fas fa-podcast" aria-hidden="true"></i>
+              </div>
+              <h3>Summary &amp; Podcasts</h3>
+              <p>Understand key points and listen to AI-generated podcasts from your materials.</p>
+              <span class="click-hint" aria-hidden="true">↗ Click to explore</span>
+            </article>
+
+            <article class="feature-card animate-on-scroll" data-feature-index="4"
+                     tabindex="0" aria-label="YouTube Summarizer feature card">
+              <div class="feature-card-icon feature-icon-navy">
+                <i class="fab fa-youtube" aria-hidden="true"></i>
+              </div>
+              <h3>YouTube Summarizer</h3>
+              <p>Get key takeaways from any YouTube video without watching the full content.</p>
+              <span class="click-hint" aria-hidden="true">↗ Click to explore</span>
+            </article>
+
+            <article class="feature-card animate-on-scroll" data-feature-index="5"
+                     tabindex="0" aria-label="Progress Tracking feature card">
+              <div class="feature-card-icon feature-icon-orange">
+                <i class="fas fa-chart-line" aria-hidden="true"></i>
+              </div>
+              <h3>Track Progress</h3>
+              <p>Monitor your learning journey with detailed analytics and insights.</p>
+              <span class="click-hint" aria-hidden="true">↗ Click to explore</span>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Feature detail overlay — JS populates innerHTML and toggles is-active -->
+        <div class="feature-overlay" id="feature-overlay"
+             role="dialog" aria-modal="true" aria-label="Feature Detail"></div>
+        <div class="feature-info-box" id="feature-info-box" aria-live="polite"></div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 3: SERVICES
+      ══════════════════════════════════════════════════════ -->
+      <section id="services" aria-labelledby="services-heading">
+        <div class="section-inner">
+          <span class="section-label animate-on-scroll">Services</span>
+          <h2 id="services-heading" class="section-title animate-on-scroll">What We Offer</h2>
+          <p class="section-subtitle animate-on-scroll">
+            Domain-focused tools built to make learning faster, deeper, and more effective.
+          </p>
+
+          <div class="services-grid">
+
+            <article class="service-card animate-on-scroll">
+              <div class="service-icon">🤖</div>
+              <h3>AI Learning Assistant</h3>
+              <p>Get help with any concept, any time. Our AI explains things simply and adapts to your style.</p>
+              <div class="service-tags">
+                <span class="tag">24/7 Available</span>
+                <span class="tag">Context-Aware</span>
+                <span class="tag">Multi-Subject</span>
+              </div>
+            </article>
+
+            <article class="service-card animate-on-scroll">
+              <div class="service-icon">📚</div>
+              <h3>Online Courses</h3>
+              <p>Professional courses in Web Dev, AI/ML, Data Science — designed for industry-ready skills.</p>
+              <div class="service-tags">
+                <span class="tag">Self-Paced</span>
+                <span class="tag">Certificates</span>
+                <span class="tag">Projects</span>
+              </div>
+            </article>
+
+            <article class="service-card animate-on-scroll">
+              <div class="service-icon">💼</div>
+              <h3>Career Training</h3>
+              <p>Resume building, mock interviews, LinkedIn tips, and real project portfolio guidance.</p>
+              <div class="service-tags">
+                <span class="tag">Resume Help</span>
+                <span class="tag">Interview Prep</span>
+                <span class="tag">Portfolio</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 4: ABOUT
+      ══════════════════════════════════════════════════════ -->
+      <section id="about" aria-labelledby="about-heading">
+        <div class="section-inner about-grid">
+
+          <div class="animate-on-scroll">
+            <span class="section-label">About Us</span>
+            <h2 id="about-heading" class="section-title">
+              What is <span class="text-gradient">SmartLearn?</span>
+            </h2>
+            <p class="about-text">
+              SmartLearn is a modern education technology platform designed for
+              <strong>B.Tech IT students</strong> at UVPCE, Ganpat University —
+              and learners everywhere who want to study smarter.
+            </p>
+            <p class="about-text">
+              By integrating AI tutoring, smart content tools, and structured
+              learning paths, SmartLearn bridges the gap between classroom
+              teaching and self-study.
+            </p>
+
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-number">2M+</div>
+                <div class="stat-label">Active Learners</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Courses</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Satisfaction</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Instructors</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Decorative illustration panel -->
+          <div class="about-illustration animate-on-scroll" aria-hidden="true">
+            <!--
+              The logo mark itself is reused here as an illustrative element.
+              Using the same image reinforces brand identity throughout the page.
+            -->
+            <img
+              src="assets/Logo.png"
+              alt="SmartLearn logo mark"
+              class="about-logo-display"
+            />
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 5: COURSES
+           ─────────────────────────────────────────────────────
+           #courses-grid is EMPTY in the HTML on purpose.
+           trail.js uses the Course class (OOP — Exp 4) to
+           generate each card and inject it into this container.
+      ══════════════════════════════════════════════════════ -->
+      <section id="courses" aria-labelledby="courses-heading">
+        <div class="section-inner">
+          <span class="section-label animate-on-scroll">Courses</span>
+          <h2 id="courses-heading" class="section-title animate-on-scroll">Popular Courses</h2>
+          <p class="section-subtitle animate-on-scroll">
+            Enroll in a course and start learning today — completely free.
+          </p>
+
+          <!-- JS injects course cards here at runtime -->
+          <div class="courses-grid" id="courses-grid" aria-label="Available Courses"></div>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 6: LOGIN / SIGNUP
+           ─────────────────────────────────────────────────────
+           Tab switching, validation, and form submission
+           are all handled in trail.js. Zero inline handlers.
+      ══════════════════════════════════════════════════════ -->
+      <section id="login" aria-labelledby="login-heading">
+        <div class="section-inner">
+          <div class="auth-wrapper">
+
+            <!-- Left column: benefits / marketing copy -->
+            <div class="auth-benefits animate-on-scroll">
+              <span class="section-label">Account</span>
+              <h2 id="login-heading" class="section-title">
+                <span class="text-gradient">Welcome User👋</span>
+              </h2>
+              <p class="auth-subtitle">
+                Login to access your courses, AI tutor, saved notes, and
+                progress dashboard.
+              </p>
+              <ul class="benefits-list" aria-label="Account benefits">
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Access all your enrolled courses</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Continue where you left off</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Full AI tutor access</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> View your progress analytics</li>
+              </ul>
+            </div>
+
+            <!-- Right column: the auth card (tabs + forms) -->
+            <div class="auth-card animate-on-scroll">
+
+              <div class="auth-tabs" role="tablist" aria-label="Login or Sign Up">
+                <button
+                  class="auth-tab active"
+                  id="login-tab-btn"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="login-form-panel"
+                >Login</button>
+                <button
+                  class="auth-tab"
+                  id="signup-tab-btn"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="signup-form-panel"
+                >Sign Up</button>
+              </div>
+
+              <div class="auth-form-area">
+
+                <!-- LOGIN FORM PANEL -->
+                <div id="login-form-panel" class="form-panel active"
+                     role="tabpanel" aria-labelledby="login-tab-btn">
+                  <form id="login-form" novalidate aria-label="Login Form">
+
+                    <div class="form-group">
+                      <label for="login-email">Email Address</label>
+                      <input type="email" id="login-email" name="email"
+                        placeholder="Enter your email" autocomplete="email"
+                        aria-describedby="login-email-error" aria-required="true" />
+                      <span class="form-error" id="login-email-error" role="alert">
+                        Please enter a valid email address.
+                      </span>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="login-password">Password</label>
+                      <input type="password" id="login-password" name="password"
+                        placeholder="Enter your password" autocomplete="current-password"
+                        aria-describedby="login-password-error" aria-required="true" />
+                      <div class="password-strength-bar" aria-hidden="true">
+                        <div class="password-strength-fill" id="login-password-strength-fill"></div>
+                      </div>
+                      <span class="password-strength-text" id="login-password-strength-text" aria-live="polite"></span>
+                      <span class="form-error" id="login-password-error" role="alert">
+                        Password must be at least 6 characters.
+                      </span>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Login →</button>
+                  </form>
+                </div>
+
+                <!-- SIGNUP FORM PANEL -->
+                <div id="signup-form-panel" class="form-panel"
+                     role="tabpanel" aria-labelledby="signup-tab-btn">
+                  <form id="signup-form" novalidate aria-label="Sign Up Form">
+
+                    <div class="form-group">
+                      <label for="signup-name">Full Name</label>
+                      <input type="text" id="signup-name" name="name"
+                        placeholder="Your full name" autocomplete="name"
+                        aria-describedby="signup-name-error" aria-required="true" />
+                      <span class="form-error" id="signup-name-error" role="alert">
+                        Please enter your name.
+                      </span>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="signup-email">Email Address</label>
+                      <input type="email" id="signup-email" name="email"
+                        placeholder="your@email.com" autocomplete="email"
+                        aria-describedby="signup-email-error" aria-required="true" />
+                      <span class="form-error" id="signup-email-error" role="alert">
+                        Please enter a valid email address.
+                      </span>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="signup-password">Password</label>
+                      <input type="password" id="signup-password" name="password"
+                        placeholder="Create a password (min 8 chars)" autocomplete="new-password"
+                        aria-describedby="signup-password-hint signup-password-error"
+                        aria-required="true" />
+                      <div class="password-strength-bar" aria-hidden="true">
+                        <div class="password-strength-fill" id="signup-password-strength-fill"></div>
+                      </div>
+                      <span class="password-strength-text" id="signup-password-strength-text" aria-live="polite">
+                        Use uppercase, lowercase, number &amp; special character.
+                      </span>
+                      <span class="form-error" id="signup-password-error" role="alert">
+                        Password must be at least 8 characters.
+                      </span>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="signup-confirm-password">Confirm Password</label>
+                      <input type="password" id="signup-confirm-password"
+                        name="confirm-password" placeholder="Re-enter your password"
+                        autocomplete="new-password"
+                        aria-describedby="signup-confirm-error" aria-required="true" />
+                      <span class="form-error" id="signup-confirm-error" role="alert">
+                        Passwords do not match.
+                      </span>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Create Account →</button>
+                  </form>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 7: FEEDBACK
+      ══════════════════════════════════════════════════════ -->
+      <section id="feedback" aria-labelledby="feedback-heading">
+        <div class="section-inner">
+          <div class="feedback-grid">
+
+            <!-- Left: contact information -->
+            <div class="animate-on-scroll">
+              <span class="section-label">Feedback</span>
+              <h2 id="feedback-heading" class="section-title">
+                We'd love to <span class="text-gradient">hear from you</span>
+              </h2>
+              <p class="section-subtitle">
+                Have a question, suggestion, or feedback? We read every message.
+              </p>
+
+              <address class="contact-items">
+                <div class="contact-item">
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  UVPCE IT Dept., Ganpat University
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-phone" aria-hidden="true"></i>
+                  <a href="tel:+910000000000">+91 00000 00000</a>
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <a href="mailto:hello@smartlearn.edu">hello@smartlearn.edu</a>
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-clock" aria-hidden="true"></i>
+                  Mon–Fri, 9am – 5pm IST
+                </div>
+              </address>
+            </div>
+
+            <!-- Right: feedback form card -->
+            <div class="feedback-card animate-on-scroll">
+              <h3>Send Feedback</h3>
+              <form id="feedback-form" novalidate aria-label="Feedback Form">
+
+                <div class="form-group">
+                  <label for="feedback-name">Your Name</label>
+                  <input type="text" id="feedback-name" name="name"
+                    placeholder="Enter your name"
+                    aria-describedby="feedback-name-error" aria-required="true" />
+                  <span class="form-error" id="feedback-name-error" role="alert">
+                    Please enter your name.
+                  </span>
+                </div>
+
+                <div class="form-group">
+                  <label for="feedback-email">Email Address</label>
+                  <input type="email" id="feedback-email" name="email"
+                    placeholder="your@email.com"
+                    aria-describedby="feedback-email-error" aria-required="true" />
+                  <span class="form-error" id="feedback-email-error" role="alert">
+                    Please enter a valid email address.
+                  </span>
+                </div>
+
+                <div class="form-group">
+                  <label for="feedback-message">Message</label>
+                  <textarea id="feedback-message" name="message"
+                    placeholder="Your feedback, question, or suggestion..."
+                    aria-describedby="feedback-message-error" aria-required="true"></textarea>
+                  <span class="form-error" id="feedback-message-error" role="alert">
+                    Please enter a message (minimum 10 characters).
+                  </span>
+                </div>
+
+                <button type="submit" class="btn-submit">Send Message →</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main><!-- /main -->
+
+
+    <!-- ══════════════════════════════════════════════════════
+         FOOTER
+    ══════════════════════════════════════════════════════ -->
+    <footer role="contentinfo">
+      <div class="footer-grid section-inner">
+
+        <div class="footer-brand">
+          <!--
+            Logo in the footer: same <img> tag as the header.
+            The CSS class .logo-image-footer sizes it smaller here.
+          -->
+          <a href="#home" class="logo" aria-label="SmartLearn Home">
+            <img
+              src="assets/Logo.png"
+              alt="SmartLearn logo"
+              class="logo-image-footer"
+            />
+          </a>
+          <p>Empowering students through AI-driven education. Learn anything, anytime, with your personal AI tutor.</p>
+          <div class="social-links" aria-label="Social Media Links">
+            <a href="#" class="social-btn" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="#" class="social-btn" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#courses">Courses</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="#login">Login</a></li>
+            <li><a href="#login">Sign Up</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#">UVPCE IT Dept.</a></li>
+            <li><a href="tel:+910000000000">+91 00000 00000</a></li>
+            <li><a href="mailto:hello@smartlearn.edu">hello@smartlearn.edu</a></li>
+            <li><a href="#">Ganpat University</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 SmartLearn. All rights reserved.</div>
+        <div>SmartLearn — UVPCE IT Project 2026</div>
+      </div>
+    </footer>
+
+
+    <!-- ══════════════════════════════════════════════════════
+         MODAL OVERLAYS (Popups)
+         ─────────────────────────────────────────────────────
+         Hidden by default (opacity:0 + pointer-events:none in CSS).
+         JS adds the class "is-open" to make them visible.
+         Clicking outside .popup-box also closes them (handled in trail.js).
+    ══════════════════════════════════════════════════════ -->
+
+    <!-- Welcome Popup — triggered automatically after page load -->
+    <div class="overlay" id="welcome-popup"
+         role="dialog" aria-modal="true" aria-labelledby="welcome-popup-title">
+      <div class="popup-box">
+        <button class="popup-close" data-close-popup="welcome-popup"
+                aria-label="Close welcome dialog">&times;</button>
+        <span class="popup-icon" aria-hidden="true"></span>
+        <h3 id="welcome-popup-title">Welcome to SmartLearn!</h3>
+        <image src="assets/logomini.png" alt="SmartLearn logo" class="welcome-logo" aria-hidden="true" />
+        <p>Your AI-powered learning companion. Start by exploring our courses or chatting with the AI tutor.</p>
+        <button class="btn-primary" data-close-popup="welcome-popup">Let's Go →</button>
+      </div>
+    </div>
+
+    <!-- Success Popup — content is set dynamically by trail.js -->
+    <div class="overlay" id="success-popup"
+         role="dialog" aria-modal="true" aria-labelledby="success-popup-title" aria-live="polite">
+      <div class="popup-box">
+        <button class="popup-close" data-close-popup="success-popup"
+                aria-label="Close dialog">&times;</button>
+        <span class="popup-icon" id="success-popup-icon" aria-hidden="true">✅</span>
+        <h3 id="success-popup-title">Success!</h3>
+        <p id="success-popup-message">Action completed.</p>
+        <button class="btn-primary" id="success-popup-btn" data-close-popup="success-popup">Continue</button>
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════════════
+         TOAST NOTIFICATION
+         Slides in from the bottom-right corner.
+         JS adds "is-visible" to show, removes it to hide.
+    ══════════════════════════════════════════════════════ -->
+    <div class="toast" id="toast-notification" role="status" aria-live="polite">
+      <span class="toast-icon" id="toast-icon" aria-hidden="true">🎉</span>
+      <div class="toast-body">
+        <strong id="toast-title"></strong>
+        <span id="toast-message"></span>
+      </div>
+    </div>
+
+    <!-- JS loaded at the very end so the entire DOM is parsed first -->
+    <script src="SmartLearn.js"></script>
+  </body>
+</html>
