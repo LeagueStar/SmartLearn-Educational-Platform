@@ -2,7 +2,7 @@
 
 ![SmartLearn Banner](assets/Logo.png)
 
-> **Live Demo:** [Insert your GitHub Pages link here once it's live]
+> **Live Demo:** https://leaguestar.github.io/SmartLearn-Educational-Platform/
 
 ## 📌 Project Description
 **SmartLearn** is a modern, responsive frontend web application designed to simulate an AI-powered educational platform. Built as a comprehensive frontend architecture project, this website bridges the gap between traditional learning and next-gen AI assistance. It features a fully responsive UI, dynamic course rendering using JavaScript Object-Oriented Programming (OOP), robust form validation using Regular Expressions (Regex), and smooth, interactive animations.
