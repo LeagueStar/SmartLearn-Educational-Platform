@@ -18,14 +18,6 @@
 </div>
 
 <br>
-
-## 📸 Interface Sneak Peek
-
-<div align="center">
-  <img src="assets/Logo.png" alt="SmartLearn Interface Placeholder" width="800" style="border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.15);" />
-  <p><em>(Mockup / Screenshot of website goes here)</em></p>
-</div>
-
 <br>
 
 ## 🎯 Purpose of Website
