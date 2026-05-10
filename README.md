@@ -1,16 +1,23 @@
-# 🎓 SmartLearn – AI Powered Educational Platform
 <div align="center">
+  <img src="assets/Logo.png" alt="SmartLearn Logo" width="250" />
+
+  <h1>🎓 SmartLearn – AI Educational Platform</h1>
+  <p><em>A modern, responsive frontend bridging traditional learning with next-gen AI.</em></p>
+
+  <a href="https://leaguestar.github.io/SmartLearn-Educational-Platform/"><strong>View Live Demo »</strong></a>
+  <br><br>
+
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
-  <img src="https://img.shields.io/github/license/LeagueStar/SmartLearn-Educational-Platform?style=for-the-badge" alt="License" />
-  <img src="https://img.shields.io/github/repo-size/LeagueStar/SmartLearn-Educational-Platform?style=for-the-badge" alt="Repo Size" />
+  <br>
+  <img src="https://img.shields.io/github/license/LeagueStar/SmartLearn-Educational-Platform?style=flat-square&color=blue" alt="License" />
+  <img src="https://img.shields.io/github/repo-size/LeagueStar/SmartLearn-Educational-Platform?style=flat-square&color=orange" alt="Repo Size" />
+  <img src="https://img.shields.io/github/last-commit/LeagueStar/SmartLearn-Educational-Platform?style=flat-square&color=success" alt="Last Commit" />
 </div>
 
-![SmartLearn Banner](assets/Logo.png)
-
-> **Live Demo:** https://leaguestar.github.io/SmartLearn-Educational-Platform/
-
+<br>
+<hr>
 ## 📌 Project Description
 **SmartLearn** is a modern, responsive frontend web application designed to simulate an AI-powered educational platform. Built as a comprehensive frontend architecture project, this website bridges the gap between traditional learning and next-gen AI assistance. It features a fully responsive UI, dynamic course rendering using JavaScript Object-Oriented Programming (OOP), robust form validation using Regular Expressions (Regex), and smooth, interactive animations.
 
