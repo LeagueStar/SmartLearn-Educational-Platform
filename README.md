@@ -17,7 +17,10 @@
 
 
 <div align="center">
-  https://github.com/user-attachments/assets/d1bcd25e-f099-4d46-8bf4-b48ae84c85f6
+  <video width="800" autoplay loop muted controls style="border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.15);">
+    <source src="https://github.com/LeagueStar/SmartLearn-Educational-Platform/raw/main/assets/LiveDemo_SmartLearn.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 </div>
 
 <br>
