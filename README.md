@@ -16,7 +16,11 @@
 ## 📸 Interface Sneak Peek
 
 <div align="center">
-  <video src="assets/LiveDemo_SmartLearn.mp4" width="800" autoplay loop muted controls style="border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.15);"></video>
+  <video src="
+
+https://github.com/user-attachments/assets/d1bcd25e-f099-4d46-8bf4-b48ae84c85f6
+
+" width="800" autoplay loop muted controls style="border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.15);"></video>
 </div>
 
 <br>
