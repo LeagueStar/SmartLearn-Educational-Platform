@@ -5,12 +5,6 @@
   <h1>🎓 SmartLearn – AI Educational Platform</h1>
   <p><em>A modern, responsive frontend bridging traditional learning with next-gen AI.</em></p>
 
-  <a href="https://leaguestar.github.io/SmartLearn-Educational-Platform/">
-    <img src="https://img.shields.io/badge/Live_Demo-View_Website-e67e22?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Live Demo" />
-  </a>
-
-  <br><br>
-
   <img src="https://img.shields.io/badge/HTML5-1a253a?style=for-the-badge&logo=html5&logoColor=white" alt="HTML" />
   <img src="https://img.shields.io/badge/CSS3-1a253a?style=for-the-badge&logo=css3&logoColor=white" alt="CSS" />
   <img src="https://img.shields.io/badge/JavaScript-1a253a?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JS" />
@@ -18,6 +12,13 @@
 </div>
 
 <br>
+
+## 📸 Interface Sneak Peek
+
+<div align="center">
+  <video src="assets/LiveDemo_SmartLearn.mp4" width="800" autoplay loop muted controls style="border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.15);"></video>
+</div>
+
 <br>
 
 ## 🎯 Purpose of Website
@@ -34,7 +35,7 @@ The primary purpose of **SmartLearn** is to demonstrate advanced frontend develo
 
 ## 🚀 Main Features of Website
 
-This project was built with a strict adherence to modern design principles, ensuring a premium user experience:
+This project was built with strict adherence to modern design principles, ensuring a premium user experience:
 
 | 🧩 Dynamic Rendering | 🛡️ Secure Auth Validation | ⚡ Interactive UI |
 | :--- | :--- | :--- |
@@ -62,7 +63,8 @@ This project was built with a strict adherence to modern design principles, ensu
  ┣ 📂 .github            # Automated issue templates & config
  ┣ 📂 assets             # Image assets and branding
  ┃ ┣ 🖼️ Logo.png         
- ┃ ┗ 🖼️ logomini.png     
+ ┃ ┣ 🖼️ logomini.png     
+ ┃ ┗ 🎥 LiveDemo_SmartLearn.mp4  # UI Preview Video
  ┣ 📜 index.html         # Semantic HTML structure
  ┣ 📜 Style.css          # Variables, animations, media queries
  ┣ 📜 Script.js          # OOP rendering, IntersectionObserver, Regex
